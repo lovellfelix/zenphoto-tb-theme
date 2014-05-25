@@ -5,7 +5,7 @@ if (!defined('WEBPATH')) die();
 class BootstrapThemeFunctions {
 
     function getThemePath() {
-        return join('/', array(WEBPATH, THEMEFOLDER, 'zenphoto-bootstrap-theme'));
+        return join('/', array(WEBPATH, THEMEFOLDER, 'zenphoto-tb-theme'));
     }
 
     function getStylesPath() {
