@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<?= html_encode(getGalleryIndexURL()) ?>"><? printGalleryTitle() ?></a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      
+      <? if (zp_loggedin()) { ?>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+        
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Tools <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+	        <li><? printLink($bs_functions->getCorePath() . '/admin.php', gettext("Overview"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-edit.php', gettext("Albums"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-tags.php', gettext("Tags"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-comments.php', gettext("Comments"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-users.php', gettext("Users"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-options.php?tab=general', gettext("Options"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-themes.php', gettext("Themes"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-plugins.php', gettext("Plugins"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-logs.php', gettext("Logs"), NULL, NULL, NULL);?></li>
+            <li><? printLink($bs_functions->getCorePath() . '/admin-edit.php?page=edit', gettext("Sort Gallery"), NULL, NULL, NULL);?></li>
+            <li class="divider"></li>
+            <li><? printLink($bs_functions->getRootPath() . '/index.php?logout=0', gettext("Logout"), NULL, NULL, NULL);?></li>
+          </ul>
+        </li>
+      </ul>
+      
+       <? } ?>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
