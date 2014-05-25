@@ -2,14 +2,15 @@
 <? include_once('header.html'); ?>
 
 <div class="container">
-
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2 class="panel-title"><? printAlbumTitle(); ?></h2>
+     <p><?php printAlbumDesc(); ?> </p>
       <? foreach (getParentBreadcrumb() as $el) { ?>
-      <a class="muted"href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a>
+      <span class="text-muted glyphicon glyphicon-book"></span>
+      <a class="text-muted" href="<?= html_encode(getGalleryIndexURL()) ?>">Albums</a> <span class="divider"> · </span>
+      <a class="text-muted" href="<?= html_encode($el['link'])?>"><?= html_encode($el['text']) ?></a>
   <? } ?>
-    <p>	<?php printAlbumDesc(); ?> </p>
   </div>
   <div class="panel-body">     
   <div class="mt40">
@@ -33,7 +34,6 @@
             </div>
         </article>
     <? } ?>
-
     <? while (next_image()) { ?>
         <article class="col-xs-11 col-sm-5 col-md-2">
            <div class="panel panel-default">
