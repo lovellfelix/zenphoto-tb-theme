@@ -1,0 +1,15 @@
+<div id="myVideo" width="90%"><p>Loading the player....</p></div>			
+	<script type="text/javascript" src="<?= $bs_functions->getJWPlayerPath() . '/jwplayer.js' ?>"></script>
+		<script type="text/javascript">
+		        jwplayer("myVideo").setup({
+		            file: "<?=html_encode($video_url)?>",
+		            image: "<?=html_encode($preview_url)?>",
+		            title: "",
+		            aspectratio: "16:9",
+		            skin: "<?= $bs_functions->getJWPlayerPath() . '/six.xml' ?>",
+		            autostart: false,
+		            stretching: "exactfit",
+		            width: "90%",
+		            controls: true
+		        });
+		    </script>
