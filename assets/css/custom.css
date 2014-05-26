@@ -10,4 +10,4 @@
     -webkit-transition: all 0.5s; 
     -o-transition: all 0.5s; 
 }
-.panel-footer ,mh { min-height: 100px; }
+.mh { min-height: 120px; }
